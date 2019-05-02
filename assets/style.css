@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Muli|Work+Sans');
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Muli', sans-serif;
+}
+
+p, input, b, a, table {
+	font-family: 'Work Sans', sans-serif;
+}
+
+.form-login {
+	margin: 10px;
+}
+
+.grup-label-input {
+	display: grid;
+	width: 180px;
+}
+
+.content-dashboard {
+	margin: 5px;
+}
+
+.footer {
+	padding: 5px;
+	height: 50px;
+	background-color: darkgrey; 
+}
