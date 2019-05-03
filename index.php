@@ -1,3 +1,9 @@
+<?php
+
+include('database.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -18,7 +24,7 @@
 	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form method="POST" action="" class="form-login">
+<form method="POST" action="processlogin.php" class="form-login">
 <div class="grup-label-input">
 <label>Username</label>
 <input type="text" name="username">
