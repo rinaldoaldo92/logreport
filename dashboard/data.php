@@ -1,10 +1,15 @@
 <?php 
 
 include('header.php');
+include('database.php');
+
+$data = "SELECT * FROM information_site_client";
+$rows = mysqli_query($koneksi, $data);
 
 ?>
-<div class="content-dashboard">
-<h2>Data Site/Client Report</h2>
+
+<div class="content-dashboard min-vh-100">
+<h2>Data Site/Client</h2>
 <div class="table-responsive">
 <table class="table">
 	<thead>
@@ -19,21 +24,15 @@ include('header.php');
 	</thead>
 	<tbody>
 	<tr>
-		<td>1</td>
-		<td>ITV009</td>
-		<td>RINAWATI_PASARIBU</td>
-		<td>Rinawati Pasaribu/081366578830</td>
-		<td>Jl Jambu II No 29, Kp. Baris</td>
-		<td>NORMAL_INTERNETTV</td>
+	<?php foreach ($rows as $row) { ?>
+		<td><?php echo $row['id']?></td>
+		<td><?php echo $row['code_site_client']?></td>
+		<td><?php echo $row['name_site_client']?></td>
+		<td><?php echo $row['pic_site_client']?></td>
+		<td><?php echo $row['alamat_site_client']?></td>
+		<td><?php echo $row['service_class']?></td>
 	</tr>
-	<tr>
-		<td>2</td>
-		<td>ATM009</td>
-		<td>BARU_BARIS_APOTEK</td>
-		<td>Joko Maryono/085766480398</td>
-		<td>Jl Mataram Raya No 17, Barisjaya</td>
-		<td>CRITICAL_INTERNET_BANKPERMISI</td>
-	</tr>
+	<?php } ?>
 </tbody>
 </table>
 </div>

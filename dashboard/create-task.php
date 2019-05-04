@@ -3,7 +3,7 @@
 include('header.php');
 
 ?>
-<div class="content-dashboard">
+<div class="content-dashboard min-vh-100">
 <h2>Create Task</h2>
 <hr>
 <form method="POST" action="">

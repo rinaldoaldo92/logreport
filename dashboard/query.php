@@ -3,9 +3,9 @@
 include('header.php');
 
 ?>
-<div class="content-dashboard">
+<div class="content-dashboard min-vh-100">
 <h2>Query Report</h2>
-<button class="btn btn-primary">Buat Template Report</button>
+<a href="create-query.php"><button class="btn btn-primary">Buat Template Report</button></a>
 <hr>
 <form method="GET" action="">
 <div class="form-group">

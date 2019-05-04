@@ -1,10 +1,14 @@
 <?php 
 
 include('header.php');
+include('database.php');
+
+$data = "SELECT * FROM ((log_action INNER JOIN data_trouble_ticket ON log_action.no_tt = data_trouble_ticket.no_tt) INNER JOIN information_site_client ON log_action.code_site_client = information_site_client.code_site_client)";
+$rows = mysqli_query($koneksi, $data);
 
 ?>
 
-<div class="content-dashboard">
+<div class="content-dashboard min-vh-100">
 <h2>Selamat datang, <?php echo $_SESSION['username'];?> </h2>
 <hr>
 <div class="row">
@@ -38,22 +42,20 @@ include('header.php');
 		<th>Created Date</th>
 		<th>Code Site/Client</th>
 		<th>Name Site/Client</th>
-		<th>Status Action</th>
-		<th>Log Action</th>
 		<th>Status TT</th>
 	</tr>
 	</thead>
 	<tbody>
 	<tr>
-		<td>1</td>
-		<td>TT-0001-001</td>
-		<td>2019/05/01 15:12</td>
-		<td>2019/05/01 15:30</td>
-		<td>CKD009</td>
-		<td>RINAWATI_PASARIBU</td>
-		<td>SLA Running</td>
-		<td>Up1 01/05/2019 15:32 still coordination with team</td>
-		<td>Open</td>
+		<?php foreach ($rows as $row) { ?>
+		<td><?php echo $row['id'] ?></td>
+		<td><?php echo $row['no_tt'] ?></td>
+		<td><?php echo $row['alarm_detected'] ?></td>
+		<td><?php echo $row['created_date'] ?></td>
+		<td><?php echo $row['code_site_client'] ?></td>
+		<td><?php echo $row['name_site_client'] ?></td>
+		<td><?php echo $row['status_tt']?></td>
+		<?php } ?>
 	</tr>
 </tbody>
 </table>
