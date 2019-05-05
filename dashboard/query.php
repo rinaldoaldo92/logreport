@@ -8,22 +8,29 @@ include('header.php');
 <a href="create-query.php"><button class="btn btn-primary">Buat Template Report</button></a>
 <hr>
 <form method="GET" action="">
-<div class="form-group">
-<label>Template Report</label>
-<select>
+<div class="form-group row">
+<label class="col-sm-1 col-sm-label">Template Report</label>
+<div class="col-sm-5">
+<select class="form-control">
 	<option></option>
 	<option></option>
 	<option></option>
 </select>
 </div>
-<div class="form-group">
-<label>Create Date</label>
+</div>
+<div class="form-group row">
+<label class="col-sm-1 col-sm-label">Create Date</label>
+<div class="col-sm-5">
 <input type="datetime" name="create_date">
 </div>
-<div class="form-group">
-<label>End Date</label>
+</div>
+<div class="form-group row">
+<label class="col-sm-1 col-sm-label">End Date</label>
+<div class="col-sm-5">
 <input type="datetime" name="end_date">
 </div>
+</div>
+<button class="btn btn-primary">Submit</button>
 </form>
 </div>
 <?php 
@@ -31,5 +38,3 @@ include('header.php');
 include('footer.php');
 
 ?>
-</body>
-</html>

@@ -6,24 +6,20 @@ include('header.php');
 <div class="content-dashboard min-vh-100">
 <h2>Create Info</h2>
 <hr>
-<form method="POST" action="">
-<div class="form-group">
-<label>Judul Task</label>
-<input type="text" name="task_title">
+<form method="POST" action="processnewinfo.php">
+<div class="form-group row">
+<label class="col-sm-1 col-sm-label">Judul Task</label>
+<div class="col-sm-5">
+<input type="text" name="task_title" class="form-control" required>
 </div>
-<div class="form-group">
-<label>Keterangan Task</label>
-<textarea name="task_description"></textarea>
 </div>
-<div class="form-group">
-<label>Code Site/Client</label>
-<select name="code_site_client">
-	<option></option>
-</select>
+<div class="form-group row">
+<label class="col-sm-1 col-sm-label">Keterangan Task</label>
+<div class="col-sm-5">
+<textarea name="task_description" class="form-control" rows="10" required></textarea>
 </div>
-<div class="form-group">
-<label>Selected Alarm</label>
 </div>
+<button class="btn btn-primary">Submit</button>
 </form>
 </div>
 <?php 
@@ -31,5 +27,3 @@ include('header.php');
 include('footer.php');
 
 ?>
-</body>
-</html>

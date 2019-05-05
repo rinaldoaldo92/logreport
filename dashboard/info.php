@@ -1,7 +1,6 @@
 <?php 
 
 include('header.php');
-include('database.php');
 
 $data = "SELECT * FROM informations";
 $rows = mysqli_query($koneksi, $data);
@@ -16,7 +15,6 @@ $rows = mysqli_query($koneksi, $data);
 <table class="table">
 	<thead>
 	<tr>
-		<th>#</th>
 		<th>Judul Informasi</th>
 		<th>Dibuat Pada</th>
 		<th>Dibuat Oleh</th>
@@ -26,7 +24,6 @@ $rows = mysqli_query($koneksi, $data);
 	<tbody>
 	<tr>
 		<?php foreach ($rows as $row) { ?>
-		<td><?php echo $row['id'] ?></td>
 		<td><?php echo $row['title_info'] ?></td>
 		<td><?php echo $row['created_on'] ?></td>
 		<td><?php echo $row['created_by'] ?></td>
@@ -42,5 +39,3 @@ $rows = mysqli_query($koneksi, $data);
 include('footer.php');
 
 ?>
-</body>
-</html>

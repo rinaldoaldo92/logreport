@@ -1,7 +1,6 @@
 <?php 
 
 include('header.php');
-include('database.php');
 
 $data = "SELECT * FROM users";
 $rows = mysqli_query($koneksi, $data);
@@ -16,11 +15,10 @@ $rows = mysqli_query($koneksi, $data);
 <table class="table">
 	<thead>
 	<tr>
-		<th>#</th>
 		<th>Nama User</th>
 		<th>Jabatan User</th>
-		<th>Username</th>
 		<th>E-mail</th>
+		<th>Username</th>
 		<th>Status User</th>
 		<th>Actions</th>
 	</tr>
@@ -28,13 +26,12 @@ $rows = mysqli_query($koneksi, $data);
 	<tbody>
 	<tr>
 		<?php foreach ($rows as $row) { ?>
-		<td><?php echo $row['id'] ?></td>
 		<td><?php echo $row['nama'] ?></td>
 		<td><?php echo $row['role'] ?></td>
 		<td><?php echo $row['email'] ?></td>
 		<td><?php echo $row['username'] ?></td>
 		<td><?php echo $row['status'] ?></td> 
-		<td><a href="edit-user.php?<?php echo $row['id'] ?>"><button class="btn btn-secondary">Edit</button></a> | <a href="delete-user.php?<?php echo $row['id'] ?>"><button class="btn btn-danger">Delete</button></a></td>
+		<td><a href="edit-user.php?id=<?php echo $row['id'] ?>"><button class="btn btn-secondary">Edit</button></a> | <a href="delete-user.php?id=<?php echo $row['id'] ?>"><button class="btn btn-danger">Delete</button></a></td>
 	</tr>
 	<?php } ?>
 </tbody>
@@ -46,5 +43,3 @@ $rows = mysqli_query($koneksi, $data);
 include('footer.php');
 
 ?>
-</body>
-</html>

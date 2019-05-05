@@ -1,34 +1,42 @@
-<?php 
+<?php
 
 include('header.php');
 
+$get_id = $_GET['id'];
+
+$select_data = "SELECT * FROM users WHERE id=$get_id";
+$rows = mysqli_query($koneksi, $select_data)
+
 ?>
-<div class="content-dashboard min-vh-100">
-<h2>Create User</h2>
+
+<div class="content-dashboard">
+<h2>Update User</h2>
 <hr>
-<form method="POST" action="processnewuser.php">
+<form method="POST" action="processupdateuser.php">
+<?php foreach ($rows as $row) { ?>
 <div class="form-group row">
 <label class="col-sm-1 col-sm-label">Nama</label>
 <div class="col-sm-5">
-<input type="text" name="nama" class="form-control" required>
+<input type="text" name="nama" class="form-control" value="<?php echo $row['nama'] ?>" disabled>
 </div>
 </div>
 <div class="form-group row">
 <label class="col-sm-1 col-sm-label">Username</label>
 <div class="col-sm-5">
-<input type="text" name="username" class="form-control" required>
+<input type="text" name="username" class="form-control" value="<?php echo $row['username'] ?>" disabled>
 </div>
 </div>
 <div class="form-group row">
 <label class="col-sm-1 col-sm-label">E-mail</label>
 <div class="col-sm-5">
-<input type="email" name="email" class="form-control" required>
+<input type="email" name="email" class="form-control" value="<?php echo $row['email'] ?>" disabled>
 </div>
 </div>
 <div class="form-group row">
 <label class="col-sm-1 col-sm-label">Jabatan</label>
 <div class="col-sm-5">
 <select name="role" class="form-control" required>
+	<option><?php echo $row['role']; ?></option>
 	<option>Direktur</option>
 	<option>VP</option>
 	<option>GM</option>
@@ -42,6 +50,7 @@ include('header.php');
 <label class="col-sm-1 col-sm-label">Status</label>
 <div class="col-sm-5">
 <select name="status" class="form-control" required>
+	<option><?php echo $row['status']; ?></option>
 	<option>ON</option>
 	<option>OFF</option>
 </select>
@@ -60,9 +69,11 @@ include('header.php');
 </div>
 </div>
 <button class="btn btn-primary">Submit</button>
+<?php } ?>
 </form>
 </div>
-<?php 
+
+<?php
 
 include('footer.php');
 

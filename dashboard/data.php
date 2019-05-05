@@ -1,7 +1,6 @@
 <?php 
 
 include('header.php');
-include('database.php');
 
 $data = "SELECT * FROM information_site_client";
 $rows = mysqli_query($koneksi, $data);
@@ -14,7 +13,6 @@ $rows = mysqli_query($koneksi, $data);
 <table class="table">
 	<thead>
 	<tr>
-		<th>#</th>
 		<th>Code Site/Client</th>
 		<th>Name Site/Client</th>
 		<th>PIC Site/Client</th>
@@ -25,7 +23,6 @@ $rows = mysqli_query($koneksi, $data);
 	<tbody>
 	<tr>
 	<?php foreach ($rows as $row) { ?>
-		<td><?php echo $row['id']?></td>
 		<td><?php echo $row['code_site_client']?></td>
 		<td><?php echo $row['name_site_client']?></td>
 		<td><?php echo $row['pic_site_client']?></td>
@@ -42,5 +39,3 @@ $rows = mysqli_query($koneksi, $data);
 include('footer.php');
 
 ?>
-</body>
-</html>

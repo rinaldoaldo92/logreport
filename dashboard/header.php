@@ -1,3 +1,11 @@
+<?php 
+
+include('database.php');
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -28,7 +36,7 @@
 	<li class="nav-item"><a href="data.php" class="nav-link">Data Site/Client</a></li>
 	<li class="nav-item"><a href="info.php" class="nav-link">Informasi Penting</a></li>
 	<li class="nav-item"><a href="manajemen.php" class="nav-link">Manajemen User</a></li>
-	<li class="nav-item"><a href="" class="nav-link">Logout</a></li>
+	<li class="nav-item"><a href="/logreport/logout.php" class="nav-link">Logout</a></li>
 </ul>
 </div>
 </nav>

@@ -1,10 +1,12 @@
 <?php 
 
 include('header.php');
-include('database.php');
 
 $data = "SELECT * FROM ((log_action INNER JOIN data_trouble_ticket ON log_action.no_tt = data_trouble_ticket.no_tt) INNER JOIN information_site_client ON log_action.code_site_client = information_site_client.code_site_client)";
 $rows = mysqli_query($koneksi, $data);
+
+$info = "SELECT * FROM informations";
+$info_rows = mysqli_query($koneksi, $info);
 
 ?>
 
@@ -27,8 +29,10 @@ $rows = mysqli_query($koneksi, $data);
 </div>
 <div class="col-6">
 <h2>Informasi Penting</h2>
-<b>01 Mei 2019, 15:28</b>
-<a href="test.php">[JADWAL] Meeting Koordinasi Engineer dan Koordinator Helpdesk</a>
+<?php foreach($info_rows as $i_r) { ?>
+<b><?php echo $i_r['created_on'] ?></b>
+<a href="info.php?id=<?php echo $i_r['id'] ?>"><?php echo $i_r['title_info'] ?></a>
+<?php } ?>
 </div>
 </div>
 <h2>Realtime Report</h2>
@@ -66,5 +70,3 @@ $rows = mysqli_query($koneksi, $data);
 include('footer.php');
 
 ?>
-</body>
-</html>

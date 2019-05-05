@@ -9,7 +9,6 @@ include('header.php');
 <table class="table">
 	<thead>
 	<tr>
-		<th>#</th>
 		<th>ID TT</th>
 		<th>Alarm Detected</th>
 		<th>Alarm Cleared</th>
@@ -19,7 +18,6 @@ include('header.php');
 	</thead>
 	<tbody>
 	<tr>
-		<td>1</td>
 		<td>TT-0001-001</td>
 		<td>2019/05/01 15:12</td>
 		<td>2019/05/01 15:30</td>
@@ -35,5 +33,3 @@ include('header.php');
 include('footer.php');
 
 ?>
-</body>
-</html>
