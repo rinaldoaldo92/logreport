@@ -2,7 +2,7 @@
 
 include('header.php');
 
-$data = "SELECT * FROM ((log_action INNER JOIN data_trouble_ticket ON log_action.no_tt = data_trouble_ticket.no_tt) INNER JOIN information_site_client ON log_action.code_site_client = information_site_client.code_site_client)";
+$data = "SELECT * FROM log_action INNER JOIN data_trouble_ticket ON log_action.no_tt = data_trouble_ticket.no_tt";
 $rows = mysqli_query($koneksi, $data);
 
 ?>
@@ -19,7 +19,6 @@ $rows = mysqli_query($koneksi, $data);
 		<th>Alarm Detected</th>
 		<th>Created Date</th>
 		<th>Code Site/Client</th>
-		<th>Name Site/Client</th>
 		<th>Task Title</th>
 		<th>Task Description</th>
 		<th>Status Action</th>
@@ -35,7 +34,6 @@ $rows = mysqli_query($koneksi, $data);
 		<td><?php echo $row['alarm_detected'] ?></td>
 		<td><?php echo $row['created_date'] ?></td>
 		<td><?php echo $row['code_site_client'] ?></td>
-		<td><?php echo $row['name_site_client'] ?></td>
 		<td><?php echo $row['task_title'] ?></td>
 		<td><?php echo $row['task_description'] ?></td>
 		<td><?php echo $row['status_log_action'] ?></td>

@@ -27,7 +27,7 @@ $rows = mysqli_query($koneksi, $data);
 		<td><?php echo $row['title_info'] ?></td>
 		<td><?php echo $row['created_on'] ?></td>
 		<td><?php echo $row['created_by'] ?></td>
-		<td><button class="btn btn-secondary">Edit</button> | <button class="btn btn-danger">Delete</button> | <button class="btn btn-primary">Open</button></td>
+		<td><a href="edit-info.php?id=<?php echo $row['id'] ?>"><button class="btn btn-secondary">Edit</button></a> | <a href="delete-info.php?id=<?php echo $row['id'] ?>"><button class="btn btn-danger">Delete</button></a> | <a href="read-info.php?id=<?php echo $row['id'] ?>"><button class="btn btn-primary">Open</button></td>
 	</tr>
 		<?php } ?>
 </tbody>

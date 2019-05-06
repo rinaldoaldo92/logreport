@@ -2,6 +2,9 @@
 
 include('header.php');
 
+$tarik_data_code_site = "SELECT * FROM information_site_client";
+$row_code_site = mysqli_query($koneksi, $tarik_data_code_site);
+
 ?>
 <div class="content-dashboard min-vh-100">
 <h2>Create Task</h2>
@@ -23,15 +26,9 @@ include('header.php');
 <label class="col-sm-1 col-sm-label">Code Site/Client</label>
 <div class="col-sm-5">
 <select name="code_site_client" class="form-control" required>
-	<option></option>
-</select>
-</div>
-</div>
-<div class="form-group row">
-<label class="col-sm-1 col-sm-label">Selected Alarm</label>
-<div class="col-sm-5">
-<select name="code_site_client" class="form-control" required>
-	<option></option>
+<?php foreach($row_code_site as $row) { ?>
+	<option><?php echo $row['code_site_client']?> | <?php echo $row['name_site_client']?></option>
+<?php } ?>
 </select>
 </div>
 </div>

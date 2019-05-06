@@ -17,7 +17,7 @@ $rows = mysqli_query($koneksi, $select_data)
 <div class="form-group row">
 <label class="col-sm-1 col-sm-label">Nama</label>
 <div class="col-sm-5">
-<input type="text" name="nama" class="form-control" value="<?php echo $row['nama'] ?>" disabled>
+<input type="text" name="nama" class="form-control" value="<?php echo $row['nama'] ?>">
 </div>
 </div>
 <div class="form-group row">
