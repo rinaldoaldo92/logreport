@@ -6,7 +6,7 @@ $tarik_data_code_site = "SELECT * FROM information_site_client";
 $row_code_site = mysqli_query($koneksi, $tarik_data_code_site);
 
 ?>
-<div class="content-dashboard min-vh-100">
+<div class="container-fluid min-vh-100">
 <h2>Create Task</h2>
 <hr>
 <form method="POST" action="processnewtask.php">

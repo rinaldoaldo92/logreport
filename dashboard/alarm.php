@@ -3,7 +3,7 @@
 include('header.php');
 
 ?>
-<div class="content-dashboard min-vh-100">
+<div class="container-fluid min-vh-100">
 <h2>Alarm</h2>
 <div class="table-responsive">
 <table class="table">

@@ -7,7 +7,7 @@ $rows = mysqli_query($koneksi, $data);
 
 ?>
 
-<div class="content-dashboard min-vh-100">
+<div class="container-fluid min-vh-100">
 <h2>Task Open</h2>
 <a href="create-task.php"><button class="btn btn-primary">Create Task</button></a>
 <hr>
@@ -28,8 +28,8 @@ $rows = mysqli_query($koneksi, $data);
 	</tr>
 	</thead>
 	<tbody>
+	<?php foreach ($rows as $row) { ?>
 	<tr>
-		<?php foreach ($rows as $row) { ?>
 		<td><?php echo $row['no_tt'] ?></td>
 		<td><?php echo $row['alarm_detected'] ?></td>
 		<td><?php echo $row['created_date'] ?></td>
@@ -40,8 +40,8 @@ $rows = mysqli_query($koneksi, $data);
 		<td><?php echo $row['log_action'] ?></td>
 		<td><?php echo $row['pic_engineer_on_site'] ?></td>
 		<td><?php echo $row['status_tt']?></td>
-		<?php } ?>
 	</tr>
+	<?php } ?>
 </tbody>
 </table>
 </div>

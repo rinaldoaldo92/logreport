@@ -7,7 +7,7 @@ $rows = mysqli_query($koneksi, $data);
 
 ?>
 
-<div class="content-dashboard min-vh-100">
+<div class="container-fluid min-vh-100">
 <h2>Manajemen User</h2>
 <a href="create-user.php"><button class="btn btn-primary">Tambah User</button></a>
 <hr>

@@ -14,28 +14,25 @@ $count_all = mysqli_query($koneksi, $select_all);
 $select_open = "SELECT COUNT(no_tt) from data_trouble_ticket WHERE status_tt = 'Open'";
 $count_open = mysqli_query($koneksi, $select_open);
 
-$select_close = "SELECT COUNT(no_tt) from data_trouble_ticket WHERE status_tt = 'Close'";
+$select_close = "SELECT COUNT(no_tt) as total from data_trouble_ticket WHERE status_tt = 'Close'";
 $count_close = mysqli_query($koneksi, $select_close);
+$close = mysqli_fetch_assoc($count_close);
 
 date_default_timezone_set("Asia/Jakarta");
 $now = date("d M Y, H:i");
 
 ?>
 
-<div class="content-dashboard min-vh-100">
+<div class="container-fluid min-vh-100">
 <h2>Selamat datang, <?php echo $_SESSION['username'];?> </h2>
 <hr>
 <div class="row">
 <div class="col-6">
 <h2>Statistik</h2>
 <b><?php echo $now; ?></b>
-<p><b>Total TT Created :</b>
-<?php 
-print_r($count_all); 
-?>
-</p>
-<p><b>Total TT Open :</b><?php $count_open; ?></p>
-<p><b>Total TT Close :</b><?php $count_close; ?></p>
+<p><b>Total TT Created :</b> <?php echo mysqli_num_rows($count_all) ?></p>
+<p><b>Total TT Open :</b> <?php echo mysqli_num_rows($count_open) ?></p>
+<p><b>Total TT Close :</b> <?php echo $close['total']?></p>
 <hr>
 <p><b>SLA Running :</b></p>
 <p><b>Limit Access :</b></p>

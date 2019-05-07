@@ -2,18 +2,17 @@
 
 include('header.php');
 
-$get_id = $_GET['id'];
-
-$select_data = "SELECT * FROM users WHERE id=$get_id";
+$select_data = "SELECT * FROM users WHERE id=$_GET[id]";
 $rows = mysqli_query($koneksi, $select_data)
 
 ?>
 
-<div class="content-dashboard">
+<div class="container-fluid min-vh-100">
 <h2>Update User</h2>
 <hr>
 <form method="POST" action="processupdateuser.php">
 <?php foreach ($rows as $row) { ?>
+<input type="hidden" name="id" value="<?php echo $row['id'] ?>">
 <div class="form-group row">
 <label class="col-sm-1 col-sm-label">Nama</label>
 <div class="col-sm-5">

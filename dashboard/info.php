@@ -7,7 +7,7 @@ $rows = mysqli_query($koneksi, $data);
 
 ?>
 
-<div class="content-dashboard min-vh-100">
+<div class="container-fluid min-vh-100">
 <h2>Informasi Penting</h2>
 <a href="create-info.php"><button class="btn btn-primary">Buat Informasi</button></a>
 <hr>

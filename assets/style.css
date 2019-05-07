@@ -8,16 +8,12 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway', sans-serif;
 }
 
-.form-login {
-	margin: 10px;
-}
-
-.content-dashboard {
+.container-fluid {
 	margin: 10px;
 }
 
 .footer {
 	padding: 5px;
 	height: 50px;
-	background-color: darkgrey; 
+	background-color: grey; 
 }

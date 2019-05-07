@@ -3,9 +3,9 @@
 include('header.php');
 
 ?>
-<div class="content-dashboard min-vh-100 container">
+<div class="container-fluid min-vh-100">
 <h3>Log Report System Manager</h3>
-<form method="POST" action="processlogin.php" class="form-login">
+<form method="POST" action="processlogin.php">
 <div class="form-group row">
 <label class="col-sm-1 col-form-label">Username</label>
 <div class="col-sm-3">

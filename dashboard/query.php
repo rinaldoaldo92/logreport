@@ -3,7 +3,7 @@
 include('header.php');
 
 ?>
-<div class="content-dashboard min-vh-100">
+<div class="container-fluid min-vh-100">
 <h2>Query Report</h2>
 <a href="create-query.php"><button class="btn btn-primary">Buat Template Report</button></a>
 <hr>

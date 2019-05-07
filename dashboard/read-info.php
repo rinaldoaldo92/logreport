@@ -7,7 +7,7 @@ $rows = mysqli_query($koneksi, $data);
 
 ?>
 
-<div class="content-dashboard min-vh-100">
+<div class="container-fluid min-vh-100">
 <h2>Informasi Penting</h2>
 <hr>
 <?php foreach ($rows as $row) { ?>
