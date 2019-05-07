@@ -3,19 +3,34 @@
 include('database.php');
 
 $username = $_POST['username']; 
-$password = $_POST['password'];
+$userpass = $_POST['password'];
 
-$select_data = "SELECT * FROM users";
-$result = mysqli_query($koneksi ,$select_data, $username, $password);
+$select_data = "SELECT username, password, nama, role FROM users WHERE username = '$username'";
+$result = mysqli_query($koneksi, $select_data);    
 
-if (mysqli_num_rows($result) > 0) {
+list($username, $password, $nama, $role) = mysqli_fetch_array($result);
 
-	session_start();
-	header('Location: dashboard');
+    if (mysqli_num_rows($result) > 0) {
 
-} else {
+        */
+        if (password_verify($userpass, $password)) {
 
-	header('Location: index.php');
-}
+            session_start();
+            $_SESSION['username'] = $username;
+            $_SESSION['nama']     = $nama;
+            $_SESSION['role'] = $role;
+
+            header("location: dashboard/index.php");
+            die();
+
+         } else {
+
+         	header("Location: index.php");
+
+         }
+    } else {
+
+    	header("Location: index.php");
+    }
 
 ?>

@@ -24,8 +24,8 @@ $rows = mysqli_query($koneksi, $data);
 	</tr>
 	</thead>
 	<tbody>
+	<?php foreach ($rows as $row) { ?>
 	<tr>
-		<?php foreach ($rows as $row) { ?>
 		<td><?php echo $row['nama'] ?></td>
 		<td><?php echo $row['role'] ?></td>
 		<td><?php echo $row['email'] ?></td>

@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway|Work+Sans');
 
-p, input, b, a, table, .btn, .form-group {
+p, input, b, a, ul, li, table, .btn, .form-group {
 	font-family: 'Work Sans', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.container-fluid, .footer {
 	font-family: 'Raleway', sans-serif;
 }
 
@@ -14,6 +14,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer {
 	padding: 5px;
-	height: 50px;
+	height: 70px;
 	background-color: grey; 
 }

@@ -35,7 +35,6 @@ $rows = mysqli_query($koneksi, $select_data)
 <label class="col-sm-1 col-sm-label">Jabatan</label>
 <div class="col-sm-5">
 <select name="role" class="form-control" required>
-	<option><?php echo $row['role']; ?></option>
 	<option>Direktur</option>
 	<option>VP</option>
 	<option>GM</option>
@@ -49,7 +48,6 @@ $rows = mysqli_query($koneksi, $select_data)
 <label class="col-sm-1 col-sm-label">Status</label>
 <div class="col-sm-5">
 <select name="status" class="form-control" required>
-	<option><?php echo $row['status']; ?></option>
 	<option>ON</option>
 	<option>OFF</option>
 </select>

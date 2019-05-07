@@ -19,7 +19,7 @@ $row_code_site = mysqli_query($koneksi, $tarik_data_code_site);
 <div class="form-group row">
 <label class="col-sm-1 col-sm-label">Keterangan Task</label>
 <div class="col-sm-5">
-<textarea name="task_description" class="form-control" rows="10" required></textarea>
+<textarea name="task_description" id="textarea_dashboard" class="form-control" rows="10" required></textarea>
 </div>
 </div>
 <div class="form-group row">

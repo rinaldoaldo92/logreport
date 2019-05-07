@@ -16,7 +16,6 @@ $rows = mysqli_query($koneksi, $data);
 	<thead>
 	<tr>
 		<th>ID TT</th>
-		<th>Alarm Detected</th>
 		<th>Created Date</th>
 		<th>Code Site/Client</th>
 		<th>Task Title</th>
@@ -31,15 +30,33 @@ $rows = mysqli_query($koneksi, $data);
 	<?php foreach ($rows as $row) { ?>
 	<tr>
 		<td><?php echo $row['no_tt'] ?></td>
-		<td><?php echo $row['alarm_detected'] ?></td>
 		<td><?php echo $row['created_date'] ?></td>
 		<td><?php echo $row['code_site_client'] ?></td>
 		<td><?php echo $row['task_title'] ?></td>
 		<td><?php echo $row['task_description'] ?></td>
-		<td><?php echo $row['status_log_action'] ?></td>
-		<td><?php echo $row['log_action'] ?></td>
-		<td><?php echo $row['pic_engineer_on_site'] ?></td>
-		<td><?php echo $row['status_tt']?></td>
+		<td>
+		<select>
+			<option>SLA Running</option>
+			<option>Limit Access</option>
+			<option>Vendor</option>
+			<option>Block Access</option>
+		</select>
+		</td>
+		<td><p>Up1 07/05/2019 20:17 dummy</p></td>
+		<td>
+		<select>
+			<option>Dedi</option>
+			<option>Carli</option>
+			<option>Otoy</option>
+		</select>	
+		</td>
+		<td>
+		<select>
+			<option><?php echo $row['status_tt'] ?></option>
+			<option>Open</option>
+			<option>Close</option>
+		</select>
+		</td>
 	</tr>
 	<?php } ?>
 </tbody>

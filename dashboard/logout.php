@@ -1,6 +1,7 @@
 <?php
 
+session_start();
 session_unset();
-redirect('Location: index.php');
+header('Location: /logreport/index.php');
 
 ?>

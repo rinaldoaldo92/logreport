@@ -22,7 +22,7 @@ $rows = mysqli_query($koneksi, $select_data);
 <div class="form-group row">
 <label class="col-sm-1 col-sm-label">Keterangan Info</label>
 <div class="col-sm-5">
-<textarea name="description_info" class="form-control" rows="10" required><?php echo $row['description_info'] ?></textarea>
+<textarea name="description_info" id="textarea_dashboard" class="form-control" rows="10" required><?php echo $row['description_info'] ?></textarea>
 </div>
 </div>
 <button class="btn btn-primary">Submit</button>

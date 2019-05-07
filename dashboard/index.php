@@ -25,6 +25,7 @@ $now = date("d M Y, H:i");
 
 <div class="container-fluid min-vh-100">
 <h2>Selamat datang, <?php echo $_SESSION['username'];?> </h2>
+<h3><?php echo $_SESSION['role']; ?></h3>
 <hr>
 <div class="row">
 <div class="col-6">
@@ -45,6 +46,7 @@ $now = date("d M Y, H:i");
 <?php foreach($info_rows as $i_r) { ?>
 <b><?php echo $i_r['created_on'] ?></b>
 <a href="read-info.php?id=<?php echo $i_r['id'] ?>"><?php echo $i_r['title_info'] ?></a>
+<br>
 <?php } ?>
 </div>
 </div>
@@ -55,23 +57,23 @@ $now = date("d M Y, H:i");
 	<tr>
 		<th>#</th>
 		<th>ID TT</th>
-		<th>Alarm Detected</th>
 		<th>Created Date</th>
 		<th>Code Site/Client</th>
 		<th>Status TT</th>
+		<th>Status Log Action</th>
 	</tr>
 	</thead>
 	<tbody>
+	<?php foreach ($rows as $row) { ?>
 	<tr>
-		<?php foreach ($rows as $row) { ?>
 		<td><?php echo $row['id'] ?></td>
 		<td><?php echo $row['no_tt'] ?></td>
-		<td><?php echo $row['alarm_detected'] ?></td>
 		<td><?php echo $row['created_date'] ?></td>
 		<td><?php echo $row['code_site_client'] ?></td>
 		<td><?php echo $row['status_tt']?></td>
-		<?php } ?>
+		<td><?php echo $row['status_log_action'];?></td>
 	</tr>
+	<?php } ?>
 </tbody>
 </table>
 </div>

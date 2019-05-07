@@ -12,7 +12,7 @@ $rows = mysqli_query($koneksi, $data);
 <hr>
 <?php foreach ($rows as $row) { ?>
 <h2><?php echo $row['title_info'] ?></h2>
-<b>Created by : </b> | <b>Created on : <?php echo $row['created_on'] ?> </b>
+<b>Created by : <?php echo $row['created_by'] ?></b> | <b>Created on : <?php echo $row['created_on'] ?> </b>
 <p><?php echo $row['description_info'] ?></p>
 </div>
 <?php } ?>
