@@ -12,7 +12,6 @@ list($username, $password, $nama, $role) = mysqli_fetch_array($result);
 
     if (mysqli_num_rows($result) > 0) {
 
-        */
         if (password_verify($userpass, $password)) {
 
             session_start();
@@ -20,7 +19,7 @@ list($username, $password, $nama, $role) = mysqli_fetch_array($result);
             $_SESSION['nama']     = $nama;
             $_SESSION['role'] = $role;
 
-            header("location: dashboard/index.php");
+            header("location: dashboard");
             die();
 
          } else {
@@ -28,9 +27,8 @@ list($username, $password, $nama, $role) = mysqli_fetch_array($result);
          	header("Location: index.php");
 
          }
-    } else {
 
-    	header("Location: index.php");
     }
+
 
 ?>
