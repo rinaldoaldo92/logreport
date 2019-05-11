@@ -1,11 +1,12 @@
 <?php 
 
 include('database.php');
+include('execute_dashboard.php');
 
 session_start();
 
 if(!isset($_SESSION['username'])) {
-	header("Location: /logreport/index.php");
+	header("Location: /logreport/index.php?pesan=belum_login");
 }
 
 ?>
@@ -24,6 +25,8 @@ if(!isset($_SESSION['username'])) {
 	<link rel="stylesheet" type="text/css" href="/logreport/assets/style.css">
 	<link rel="stylesheet" type="text/css" href="/logreport/assets/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/logreport/assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/logreport/assets/fontawesome/webfontcss/css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="/logreport/assets/fontawesome/webfontcss/css/fontawesome-all.min.css">
 	<script type="text/javascript" src="/logreport/assets/js/jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="/logreport/assets/js/popper.min.js"></script>
 	<script type="text/javascript" src="/logreport/assets/bootstrap/js/bootstrap.js"></script>
@@ -37,15 +40,15 @@ if(!isset($_SESSION['username'])) {
   </button>
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 	<ul class="navbar-nav mr-auto">
-	<li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-	<li class="nav-item"><a href="task.php" class="nav-link">Task</a></li>
-	<li class="nav-item"><a href="query.php" class="nav-link">Query</a></li>
-	<li class="nav-item"><a href="data.php" class="nav-link">Data Site/Client</a></li>
+	<li class="nav-item"><a href="index.php" class="nav-link"><span class="fas fa-home"></span> Home</a></li>
+	<li class="nav-item"><a href="task.php" class="nav-link"><span class="fas fa-tasks"></span> Task</a></li>
+	<li class="nav-item"><a href="query.php" class="nav-link"><span class="fas fa-angle-double-right"></span> Query</a></li>
+	<li class="nav-item"><a href="data.php" class="nav-link"><span class="fas fa-database"></span> Data Site/Client</a></li>
 	<?php if($_SESSION['role'] == 'Engineer') { 
-	 echo "<li class='nav-item'><a href='info.php' class='nav-link'>Informasi Penting</a></li>";
-	 echo "<li class='nav-item'><a href='manajemen.php' class='nav-link'>Manajemen User</a></li>";
+	 echo "<li class='nav-item'><a href='info.php' class='nav-link'><span class='fas fa-info'></span> Informasi Penting</a></li>";
+	 echo "<li class='nav-item'><a href='manajemen.php' class='nav-link'><span class='fas fa-users'></span> Manajemen User</a></li>";
 	} ?>
-	<li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
+	<li class="nav-item"><a href="logout.php" class="nav-link"><span class="fas fa-sign-out-alt"></span> Logout</a></li>
 </ul>
 </div>
 </nav>

@@ -2,8 +2,6 @@
 
 include('header.php');
 
-$tarik_data_code_site = "SELECT * FROM information_site_client";
-$row_code_site = mysqli_query($koneksi, $tarik_data_code_site);
 
 ?>
 <div class="container-fluid min-vh-100">
@@ -35,7 +33,10 @@ $row_code_site = mysqli_query($koneksi, $tarik_data_code_site);
 <button class="btn btn-primary">Submit</button>
 </form>
 </div>
-<?php 
+<script type="text/javascript">
+CKEDITOR.replace('textarea_dashboard');
+</script>
+<?php
 
 include('footer.php');
 

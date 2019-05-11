@@ -23,7 +23,10 @@ include('header.php');
 <button class="btn btn-primary">Submit</button>
 </form>
 </div>
-<?php 
+<script type="text/javascript">
+CKEDITOR.replace('textarea_dashboard');
+</script>
+<?php
 
 include('footer.php');
 

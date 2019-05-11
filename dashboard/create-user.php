@@ -62,7 +62,7 @@ include('header.php');
 <button class="btn btn-primary">Submit</button>
 </form>
 </div>
-<?php 
+<?php
 
 include('footer.php');
 

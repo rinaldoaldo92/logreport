@@ -2,9 +2,6 @@
 
 include('header.php');
 
-$data = "SELECT * FROM log_action INNER JOIN data_trouble_ticket ON log_action.no_tt = data_trouble_ticket.no_tt";
-$rows = mysqli_query($koneksi, $data);
-
 ?>
 
 <div class="container-fluid min-vh-100">
@@ -27,7 +24,7 @@ $rows = mysqli_query($koneksi, $data);
 	</tr>
 	</thead>
 	<tbody>
-	<?php foreach ($rows as $row) { ?>
+	<?php foreach ($rows_report as $row) { ?>
 	<tr>
 		<td><?php echo $row['no_tt'] ?></td>
 		<td><?php echo $row['created_date'] ?></td>

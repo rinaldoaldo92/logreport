@@ -29,7 +29,10 @@ $rows = mysqli_query($koneksi, $select_data);
 </form>
 <?php } ?>
 </div>
-<?php 
+<script type="text/javascript">
+CKEDITOR.replace('textarea_dashboard');
+</script>
+<?php
 
 include('footer.php');
 

@@ -2,9 +2,6 @@
 
 include('header.php');
 
-$data_tt = "SELECT no_tt, status_tt FROM data_trouble_ticket WHERE alarm_detected = ''";
-$query_data_tt = mysqli_query($koneksi, $data_tt);
-
 ?>
 <div class="container-fluid min-vh-100">
 <h2>Alarm</h2>

@@ -24,7 +24,7 @@ list($username, $password, $nama, $role) = mysqli_fetch_array($result);
 
          } else {
 
-         	header("Location: index.php");
+         	header("Location: index.php?pesan=gagal_login");
 
          }
 

@@ -2,9 +2,6 @@
 
 include('header.php');
 
-$data = "SELECT * FROM informations";
-$rows = mysqli_query($koneksi, $data);
-
 ?>
 
 <div class="container-fluid min-vh-100">
@@ -23,7 +20,7 @@ $rows = mysqli_query($koneksi, $data);
 	</thead>
 	<tbody>
 	<tr>
-		<?php foreach ($rows as $row) { ?>
+		<?php foreach ($info_rows as $row) { ?>
 		<td><?php echo $row['title_info'] ?></td>
 		<td><?php echo $row['created_on'] ?></td>
 		<td><?php echo $row['created_by'] ?></td>

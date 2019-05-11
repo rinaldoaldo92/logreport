@@ -8,7 +8,7 @@ include('header.php');
 <hr>
 <b> UNDER CONSTRUCTION </b>
 </div>
-<?php 
+<?php
 
 include('footer.php');
 

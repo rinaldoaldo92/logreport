@@ -2,9 +2,6 @@
 
 include('header.php');
 
-$data = "SELECT * FROM information_site_client";
-$rows = mysqli_query($koneksi, $data);
-
 ?>
 
 <div class="container-fluid min-vh-100">
@@ -22,7 +19,7 @@ $rows = mysqli_query($koneksi, $data);
 	</thead>
 	<tbody>
 	<tr>
-	<?php foreach ($rows as $row) { ?>
+	<?php foreach ($row_code_site as $row) { ?>
 		<td><?php echo $row['code_site_client']?></td>
 		<td><?php echo $row['name_site_client']?></td>
 		<td><?php echo $row['pic_site_client']?></td>

@@ -2,9 +2,6 @@
 
 include('header.php');
 
-$data = "SELECT * FROM users";
-$rows = mysqli_query($koneksi, $data);
-
 ?>
 
 <div class="container-fluid min-vh-100">
@@ -24,7 +21,7 @@ $rows = mysqli_query($koneksi, $data);
 	</tr>
 	</thead>
 	<tbody>
-	<?php foreach ($rows as $row) { ?>
+	<?php foreach ($rows_users as $row) { ?>
 	<tr>
 		<td><?php echo $row['nama'] ?></td>
 		<td><?php echo $row['role'] ?></td>
